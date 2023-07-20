@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Tektur&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --bg-dark: rgb(39,39,39);
+    --bg-light: rgb(64,64,64);
+    --theme: rgb(123, 70, 255);
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: repeating-linear-gradient(to top left,var(--bg-light),var(--bg-light) 30%,var(--bg-dark) 30%,var(--bg-dark) 60%,var(--bg-light) 60%);
+}
+
+.container {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(4, 4rem);
+    grid-template-rows: 3rem 5rem repeat(6, 3rem);
+    margin: 2rem auto;
+    grid-gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    box-shadow:  0 0 1.5rem;
+    background: linear-gradient(rgba(106, 0, 255, 0.196),rgba(0, 0, 0, 0.215), rgba(0, 0, 0, 0.285) );
+    backdrop-filter: blur(0.7rem);
+    -webkit-backdrop-filter: blur(0.7rem);
+    border-radius: 1rem;
+}
+
+.inp-box {
+    grid-area: 1/1/2/-1;
+    text-align: right;
+    font-size: 1rem;
+    font-family: 'Share Tech Mono';
+    padding: 1rem; 
+    color: white;
+    opacity: 0.5; 
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.out-box {
+    grid-area: 2/1/3/-1;
+    font-size: 2.5rem;
+    font-family: 'Share Tech Mono';
+    color: white;
+    padding: 1rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: right;
+
+}
+
+.out-box:active{
+    border: none;
+}
+
+.button {
+    /* text aligns to center by default! */
+    height: 3rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-family: 'Share Tech Mono';
+    font-size: 1.3rem;
+    color:white;
+    border: none;
+    transition: all ease 0s;
+    position: relative;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button:active{
+    background-color: rgba(0,0,0,0.5);
+}
+
+.value{
+    background-color: rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0 0 0.3rem;
+}
+.value::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgb(112, 112, 112);
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0;
+    transition: all ease 0.2s;
+}
+
+.value:hover::before{
+    opacity: 1;
+}
+
+.equal {
+    grid-area: 8/3/9/5;
+    background-color: transparent;
+    color:rgb(225, 214, 252);
+    font-size: 2rem;
+    box-shadow: inset 0 0 3rem var(--theme);
+    border: 0.1rem solid var(--theme); 
+}
+
+.equal::before{
+    position: absolute;
+    content: "";
+    inset: 0;
+    background-color: rgb(162, 125, 255);
+    border-radius: inherit;
+    box-shadow: 0 0 0.5rem 0.3rem var(--theme);;
+    opacity: 0;
+    z-index: -1;
+    transition: all ease 0.2s;
+}
+
+.equal:hover::before{
+    opacity: 1;
+}
+
+.operator {
+    background-color: transparent;
+    box-shadow: inset 0 0 1.5rem var(--theme);;
+}
+
+.operator::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color:  var(--theme);
+    z-index:-1;
+    border-radius: inherit;
+    opacity: 0;
+    transition: all ease-in-out 0.2s;  
+}
+
+.operator:hover::before{
+    opacity: 1;
+}
+
+
+
+
+
